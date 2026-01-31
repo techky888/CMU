@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT Portfolio | Phumiphat Singpao</title>
+
+<style>
+:root{
+  --main:#1e88e5;
+  --soft:#e3f2fd;
+  --dark:#0d47a1;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:"Segoe UI", Tahoma, sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#f9fbff;
+  color:#333;
+  line-height:1.7;
+}
+
+/* ===== NAV ===== */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:white;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  z-index:1000;
+}
+
+nav ul{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  list-style:none;
+}
+
+nav ul li a{
+  display:block;
+  padding:14px 18px;
+  text-decoration:none;
+  color:var(--dark);
+  font-weight:600;
+}
+
+nav ul li a:hover{
+  background:var(--soft);
+}
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(to right,#1e88e5,#42a5f5);
+  color:white;
+  text-align:center;
+  padding:130px 10% 90px;
+}
+
+.hero h1{
+  font-size:2.5rem;
+}
+
+.hero p{
+  margin-top:10px;
+  font-size:1.1rem;
+}
+
+.hero img{
+  width:200px;
+  height:200px;
+  border-radius:100%;
+  object-fit:cover;
+  margin-top:30px;
+}
+
+
+.quote{
+  margin-top:25px;
+  font-style:italic;
+  font-size:1.2rem;
+}
+
+/* ===== SECTIONS ===== */
+section{
+  padding:80px 10% 60px;
+  animation:fadeUp .8s ease;
+}
+
+h2{
+  color:var(--dark);
+  margin-bottom:20px;
+  border-left:6px solid var(--main);
+  padding-left:12px;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  margin-bottom:18px;
+}
+
+/* ===== TABLE ===== */
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+}
+
+th,td{
+  border:1px solid #ddd;
+  padding:12px;
+  text-align:center;
+}
+
+th{
+  background:var(--soft);
+}
+
+/* ===== BUTTON ===== */
+.btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:12px 26px;
+  background:white;
+  color:var(--main);
+  border-radius:25px;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.btn:hover{
+  background:var(--soft);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:25px;
+  background:#e3f2fd;
+  color:#555;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  section{padding:70px 6% 50px;}
+  .hero h1{font-size:2rem;}
+}
+
+/* ===== PRINT (PDF) ===== */
+@media print{
+  nav,.btn{display:none;}
+  body{background:white;}
+  section{padding:40px 6%;}
+  .card{box-shadow:none;border:1px solid #ccc;}
+}
+</style>
+</head>
+
+<script>
+function savePortfolio(){
+  const portfolioData = {
+    name: "Phumiphat Singpao",
+    gpax: "3.5",
+    targetUniversity: "Chiang Mai University",
+    major: "Information Technology",
+    savedAt: new Date().toLocaleString()
+  };
+
+  localStorage.setItem("portfolioData", JSON.stringify(portfolioData));
+  alert("✅ บันทึก Portfolio เรียบร้อยแล้ว");
+}
+</script>
+
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+<ul>
+  <li><a href="#about">About</a></li>
+  <li><a href="#gpax">GPAX</a></li>
+  <li><a href="#skills">Skills</a></li>
+  <li><a href="#projects">Projects</a></li>
+  <li><a href="#training">Training</a></li>
+  <li><a href="#portfolio-use">Portfolio</a></li>
+  <li><a href="#inspiration">SOP</a></li>
+  <li><a href="#signature">Signature</a></li>
+</ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <h1>Phumiphat Singpao</h1>
+  <p>IT Portfolio | Student Portfolio for University Admission</p>
+  <img src="school_logo.png" alt="School Logo">
+  <div class="quote">
+    “Technology is not just a tool, but a power to create and improve the world.”
+  </div>
+  <a href="#" class="btn" onclick="window.print()">Download PDF Portfolio</a>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+<h2>ประวัติส่วนตัวและการศึกษา | About Me</h2>
+<div class="card">
+<p><strong>ชื่อ:</strong> ภูมิภัทร สิงห์เปา</p>
+<p><strong>ระดับชั้น:</strong> มัธยมศึกษาปีที่ 5</p>
+<p><strong>โรงเรียน:</strong> โรงเรียนบุญวาทย์วิทยาลัย</p>
+<p><strong>เป้าหมาย:</strong> software engineer</p>
+</div>
+</section>
+
+<!-- ===== GPAX ===== -->
+<section id="gpax">
+<h2>ผลการเรียน | Academic Record</h2>
+<div class="card">
+<p><strong>GPAX:</strong> 3.5 / 4.00</p>
+<ul>
+<li>คอมพิวเตอร์และเทคโนโลยีสารสนเทศ</li>
+<li>คณิตศาสตร์</li>
+<li>การพัฒนาเว็บไซต์เบื้องต้น</li>
+</ul>
+</div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+<h2>ทักษะและการเขียนโปรแกรม | Skills</h2>
+<table>
+<tr><th>Skill</th><th>Level</th></tr>
+<tr><td>Python</td><td>Beginner</td></tr>
+<tr><td>HTML / CSS</td><td>Beginner</td></tr>
+<tr><td>VS Code</td><td>Intermediate</td></tr>
+<tr><td>Problem Solving</td><td>Intermediate</td></tr>
+</table>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+<h2>โครงงานด้านไอที | IT Projects</h2>
+<div class="card">
+<p>เรียนlifelong</p>
+</div>
+</section>
+
+<!-- ===== TRAINING ===== -->
+<section id="training">
+<h2>ประสบการณ์การฝึกอบรม | Training</h2>
+<div class="card">
+<ul>
+<li>กิจกรรมอบรมการพัฒนาเว็บไซต์</li>
+<li>การเรียนรู้ด้านไอทีด้วยตนเอง (Lifelong Learning)</li>
+</ul>
+</div>
+</section>
+
+<!-- ===== PORTFOLIO USE ===== -->
+<section id="portfolio-use">
+<h2>ข้อมูลสำหรับการยื่น Portfolio</h2>
+<div class="card">
+<p><strong>สาขาที่สมัคร:</strong> เทคโนโลยีสารสนเทศ</p>
+<p><strong>มหาวิทยาลัยเป้าหมาย:</strong> มหาวิทยาลัยเชียงใหม่</p>
+</div>
+</section>
+
+<!-- ===== SOP ===== -->
+<section id="inspiration">
+<h2>แรงบันดาลใจและเป้าหมายทางการศึกษา | Statement of Purpose</h2>
+<div class="card">
+<p>
+ข้าพเจ้ามีความสนใจด้านเทคโนโลยีสารสนเทศจากการเรียนรู้การใช้คอมพิวเตอร์และการเขียนโปรแกรม  
+ทำให้ตระหนักว่าเทคโนโลยีเป็นเครื่องมือสำคัญในการพัฒนาสังคม
+</p>
+<p>
+ข้าพเจ้ามีความมุ่งมั่นที่จะเข้าศึกษาต่อในสาขาเทคโนโลยีสารสนเทศ  
+เพื่อพัฒนาทักษะด้านการคิดวิเคราะห์และการเขียนโปรแกรมอย่างเป็นระบบ
+</p>
+<p>
+มหาวิทยาลัยเชียงใหม่เป็นสถาบันที่มีความโดดเด่นด้านวิชาการ  
+และเอื้อต่อการพัฒนานวัตกรรม ข้าพเจ้าจึงมีความประสงค์สมัครเข้าศึกษา  
+เพื่อเติบโตเป็นบุคลากรด้านไอทีที่มีคุณภาพในอนาคต
+</p>
+</div>
+</section>
+
+<!-- ===== SIGNATURE ===== -->
+<section id="signature">
+<h2>คำรับรอง | Declaration</h2>
+<div class="card">
+<p>
+ข้าพเจ้าขอรับรองว่าข้อมูลทั้งหมดใน Portfolio ฉบับนี้เป็นความจริง  
+และจัดทำขึ้นเพื่อใช้ประกอบการสมัครเข้าศึกษาต่อ
+</p>
+<br>
+<p>ลงชื่อ นายภูมิภัทร สิงห์เปา </p>
+<p>(ภูมิภัทร สิงห์เปา)</p>
+</div>
+</section>
+
+<div style="text-align:center; margin-bottom:40px;">
+  <button class="btn" onclick="savePortfolio()">💾 บันทึกผล Portfolio</button>
+</div>
+
+
+<footer>
+© 2026 IT Portfolio | Student Portfolio
+</footer>
+
+</body>
+</html>
